@@ -102,6 +102,7 @@ fn parse_date_time(input: f64) -> Option<chrono::NaiveDateTime> {
         seconds += 1;
     }
 
+    println!("{}, {}, {}, {}", year, day, seconds, nsecs);
     let date = NaiveDate::from_yo_opt(year, day as u32).unwrap().and_time(NaiveTime::from_num_seconds_from_midnight_opt(seconds, nsecs).unwrap());
 
     Some(date)
